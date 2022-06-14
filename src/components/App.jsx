@@ -10,7 +10,11 @@ function App() {
   return (
     <div className="container">
       {isRegistered}
-      {isLoggedIn ? <h1>Hello, {userName}. </h1> : <Form />}
+      {isLoggedIn ? (
+        <h1>Hello, {userName}. </h1>
+      ) : (
+        <Form isRegistered={isRegistered} />
+      )}
     </div>
   );
 }
