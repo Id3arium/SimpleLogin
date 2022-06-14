@@ -1,12 +1,16 @@
 import React, { useState } from "react";
-import Login from "./Login";
+import Form from "./Form";
 
 function App() {
-  let [isLoggenIn, setIsLoggenIn] = useState(false);
+  let [isLoggedIn, setIsLoggedIn] = useState(false);
+  let [isRegistered, setIsRegistered] = useState(false);
+  let [userName, setUserName] = useState("");
+  let [password, setpassword] = useState("");
+
   return (
     <div className="container">
-      <h1>Hello </h1>
-      <Login />
+      {isRegistered}
+      {isLoggedIn ? <h1>Hello, {userName}. </h1> : <Form />}
     </div>
   );
 }
